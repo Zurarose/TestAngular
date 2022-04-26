@@ -1,0 +1,45 @@
+<div *ngIf="currenciesList;then content else loader"></div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+<ng-template #content>
+  <h2 class="text-center text-primary">Currency converter</h2>
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column m-2">
+      <label for="from">First currency</label>
+      <div class="d-flex flex-row">
+        <div class="input-group mb-3">
+          <input [disabled]="disableInput" class="form-control" type="text" min="0" id="from"
+                 [(ngModel)]="currency.from.valueFrom" appDecimalFilter name="from"
+                 (change)="getConvert($event)">
+          <select [(ngModel)]="currency.from.currencyFrom" name="from" (change)="getExchange($event)" class="form-select"
+                  aria-label="Example select with button addon">
+            <option *ngFor="let item of currenciesList" [value]="item">
+              {{item}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column m-2">
+      <label for="to">Second currency</label>
+      <div class="d-flex flex-row">
+        <div class="input-group mb-3">
+          <input [disabled]="disableInput" class="form-control" type="text" min="0" id="to"
+                 [(ngModel)]="currency.to.valueTo" appDecimalFilter name="to"
+                 (change)="getConvert($event)">
+          <select [(ngModel)]="currency.to.currencyTo" name="to" (change)="getExchange($event)" class="form-select"
+                  aria-label="Example select with button addon">
+            <option *ngFor="let item of currenciesList" [value]="item">
+              {{item}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<pre class="card card-block card-header">{{currency | json}}</pre>
+
+
