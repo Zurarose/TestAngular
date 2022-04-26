@@ -3,9 +3,9 @@
     <h6 href="#">Currency Convertor <span class="text-warning">|</span> Made by Oleh Sannikov</h6>
     <div class="text-end" id="navbarText">
       <h6>
-        EUR to UAH: {{data && data.EUR_UAH | currency : "EUR"}}
+        EUR to UAH: {{data && data.EUR_UAH | currency : "UAH" : "₴"}}
         <span class="text-warning">|</span>
-        USD to UAH {{data && data.USD_UAH | currency : "USD"}}
+        USD to UAH: {{data && data.USD_UAH | currency : "UAH" : "₴"}}
       </h6>
     </div>
   </div>
