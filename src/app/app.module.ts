@@ -7,7 +7,7 @@ import {ConverterComponent} from './Converter/converter/converter.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
 import {LoaderComponent} from "../Utils/Loader/loader/loader.component";
-import {DecimalFilterDirective} from "../Utils/Directives/decimal-filter.directive";
+import {DecimalFilterDirective} from "../Directive/decimal-filter.directive";
 
 @NgModule({
   declarations: [
